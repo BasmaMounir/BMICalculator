@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   numberpicker: ^2.1.2
   syncfusion_flutter_sliders: ^25.1.40
+  provider: ^6.1.2
 
 dev_dependencies:
   flutter_test:

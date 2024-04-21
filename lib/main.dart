@@ -1,8 +1,12 @@
-import 'package:bmi_calculator_app/BmiWidgets/Home/bmi_calculator.dart';
+import 'package:bmi_calculator_app/BmiWidgets/Home/home_widget.dart';
+import 'package:bmi_calculator_app/BmiWidgets/Provider/BmiProvider.dart';
+import 'package:bmi_calculator_app/BmiWidgets/Result/ResultScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => BmiProvider(), child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -12,9 +16,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: BmiCalculator.routeName,
+      initialRoute: HomeWidget.routeName,
       routes: {
-        BmiCalculator.routeName: (context) => const BmiCalculator(),
+        HomeWidget.routeName: (context) => const HomeWidget(),
+        ResultScreen.routeName: (context) => const ResultScreen()
       },
     );
   }
